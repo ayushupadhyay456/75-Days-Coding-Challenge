@@ -1,0 +1,12 @@
+class Solution:
+    def pivotIndex(self, nums: List[int]) -> int:
+        low=0
+        left_sum=0
+        whole=sum(nums)
+        while low<len(nums):
+            if whole-nums[low]==left_sum*2:
+                return low
+            
+            left_sum+=nums[low]
+            low+=1
+        return -1 
